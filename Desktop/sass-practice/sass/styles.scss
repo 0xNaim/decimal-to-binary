@@ -1,0 +1,86 @@
+@import "reset";
+@import "variables";
+@import "mixins";
+
+#main-nav {
+  background: $deep-blue;
+  ul {
+    width: 100%;
+    @include clear-fix;
+  }
+  li {
+    float: left;
+    width: (100% / 6);
+    @include media-query(600px) {
+      width: 100%;
+    }
+  }
+  a {
+    color: $off-white;
+    text-decoration: none;
+    padding: 16px;
+    display: block;
+    text-align: center;
+    transition: all 0.3s;
+    &:hover {
+      background: lighten($deep-blue, 5);
+    }
+  }
+} // end #main-nav
+
+section h1 {
+  font-size: $section-heading;
+  color: $deep-blue;
+}
+
+#services {
+  margin: 60px 0;
+  h1 {
+    text-align: center;
+  }
+  li {
+    float: left;
+    box-sizing: border-box;
+    text-align: center;
+    width: (100% / 3);
+  }
+  img {
+    width: 60%;
+    margin: 20px 20%;
+  }
+  a {
+    text-decoration: none;
+    color: $deep-blue;
+    font-weight: bold;
+    transition: all 0.3s;
+    &:hover {
+      color: lighten($deep-blue, 10);
+    }
+  }
+  ul {
+    @include clear-fix;
+  }
+}
+
+.lead-banner {
+  @include banner;
+  text-align: right;
+}
+
+.lessons-banner {
+  @include banner;
+  li {
+    text-transform: uppercase;
+    font-style: 20px;
+    min-width: 500px;
+    margin: 60px 0;
+  }
+}
+
+#projects li {
+  @include grid(4, 2%);
+  margin-bottom: 1.4%;
+  img {
+    width: 100%;
+  }
+}
